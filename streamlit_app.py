@@ -11,8 +11,9 @@ streamlit.text("🫖Chai, ☕️Coffee, 🥤Fruit Juice")
 
 streamlit.header("🍒🍎🍇Build your own smoothie🍅🍌🥝")
 fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
-# streamlit.dataframe(fruit_list)
+# Set fruit name column as index
+fruit_list = fruit_list.set_index("Fruit")
 
 # Add a user interactive widget called a Multi-select that will allow users to pick the fruits they want in their smoothies.
-streamlit.multiselect("Pick some fruits:", list(fruit_list.Fruit))
+streamlit.multiselect("Pick some fruits:", list(fruit_list.index))
 streamlit.dataframe(fruit_list)
