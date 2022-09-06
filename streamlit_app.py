@@ -1,9 +1,11 @@
 import streamlit
 
-streamlit.title("New Healthy Diner")
+streamlit.title("Purani Dilli Healthy Diner")
 
-streamlit.header("Breakfast Menu")
-streamlit.text("Nihaari & Tandoori Roti")
-streamlit.text("Kabab & Paratha")
-streamlit.text("Half-Fried Free-Range Egg")
-streamlit.text("Chai, Coffee, Fruit Juice")
+streamlit.header("Naashta Paani")
+streamlit.text("🍲Nihaari & 🫓Tandoori Roti")
+streamlit.text("🍖Kabab & 🫓Paratha")
+streamlit.text("🍳Half-Fried Free-Range Egg")
+streamlit.text("🫖Chai, ☕️Coffee, 🥤Fruit Juice")
+
+streamlit.header("🍒🍎🍇Build your own smoothie🍅🍌🥝"
