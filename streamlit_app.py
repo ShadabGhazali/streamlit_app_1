@@ -8,4 +8,4 @@ streamlit.text("🍖Kabab & 🫓Paratha")
 streamlit.text("🍳Half-Fried Free-Range Egg")
 streamlit.text("🫖Chai, ☕️Coffee, 🥤Fruit Juice")
 
-streamlit.header("🍒🍎🍇Build your own smoothie🍅🍌🥝"
+streamlit.header("🍒🍎🍇Build your own smoothie🍅🍌🥝")
