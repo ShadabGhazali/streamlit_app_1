@@ -43,7 +43,7 @@ try:
     # Display normalized json
     streamlit.dataframe(fruityvice_normalized)
    except URLError as e:
-     streamlit.eroor()
+    streamlit.eroor()
 
 # Stop steramlit for debugging
 streamlit.stop()
