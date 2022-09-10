@@ -23,21 +23,27 @@ fruits_to_show = fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
 
-
+# New section to display Fruityvice API response
 streamlit.header("Fruityvice Fruit Advice!")
+try:
+  # Add a Text Entry Box and Send the Input to Fruityvice as Part of the API Call
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
+  
+  if not fruit_choice:
+    stremlit.error("Please select a fruit to get the information")
+  else:
+    # streamlit.write('The user entered ', fruit_choice)                                   
 
-# Add a Text Entry Box and Send the Input to Fruityvice as Part of the API Call
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice)                                   
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+    # streamlit.text(fruityvice_response.json())
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-# streamlit.text(fruityvice_response.json())
+    # Normalize json object
+    fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 
-# Normalize json object
-fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-
-# Display normalized json
-streamlit.dataframe(fruityvice_normalized)
+    # Display normalized json
+    streamlit.dataframe(fruityvice_normalized)
+   except URLError as e:
+     streamlit.eroor()
 
 # Stop steramlit for debugging
 streamlit.stop()
