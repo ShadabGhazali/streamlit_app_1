@@ -49,4 +49,4 @@ streamlit.dataframe(my_data_rows)
 # Allow the user to add a fruit to th elist
 streamlit.text("What fruit would you like to add?")
 add_my_fruit = streamlit.text_input('jackfruit')
-streamlit.text("Thanks for adding ", add_my_fruit)
+streamlit.write("Thanks for adding ", add_my_fruit)
